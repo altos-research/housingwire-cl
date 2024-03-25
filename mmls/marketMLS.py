@@ -34,6 +34,7 @@ class MarketMLS:
                                             .str.replace("'",'')\
                                             .str.replace('LLC', '')\
                                             .str.replace('INC', '')
+        self.df['listing_office_name'] = self.df.listing_office_name.str.strip()
         ### SPECIAL: clean SOTHEBY'S INTERNATIONAL REALTY
         self.df['listing_office_name'] = [x if 'SOTHEBY' not in x 
                                           else 'SOTHEBY\'S INTERNATIONAL REALTY'
