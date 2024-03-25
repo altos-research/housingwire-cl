@@ -20,3 +20,26 @@ Removed data linked to "NON MLS" office name.
 
 After review, realized that EXIT Real Estate Gallery was acquired by United Real Estate in late 2022, and "United Real Estate" was being used as office name for office IDs that were affiliated with EXIT in years prior to United Real Estate's acquisition. Changed the office name for these office IDs from United Real Estate to EXIT Real Estate Gallery in for rows with listing years prior to 2023.
 
+<h3>Exploratory data analysis and data visualization</h3>
+
+Created office listing group column of company affiliations of each office name. Created market share percentage column of each office listing group's percentage of listings each year.
+
+Created filtered and pivoted tables:
+- All stats by geography and listing year
+- Jacksonville listing stats by brokerage by year (grouped by company name, all companies that were in the top 100 in any year from 2019 to 2023)
+- Jacksonville listing stats by binned rank of office (ranked by # of listings per office ID)
+- Stats for iBuyers
+- Stats for builders
+- Fastest growing brokerages
+- Fastest declining brokerages
+- Brokerages that did not survive to 2023
+- Brokerages that sprung up after 2019
+
+Data visualizations:
+- Grid of charts of <a href="https://public.flourish.studio/visualisation/17268498/">all stats by geo</a>
+- Grouped hbars by <a href="https://public.flourish.studio/visualisation/17269941/">office rank bins</a>
+- Grid of hbars of <a href="https://public.flourish.studio/visualisation/17268433/">2019 vs. 2023 for each geographic bin</a>
+- Bar chart race of <a href="https://public.flourish.studio/visualisation/17268383/">top 10 brokerages by listing count each year</a>
+- Stacked area chart of <a href="https://public.flourish.studio/visualisation/17300005/">homebuilders' listings</a>
+- Stacked area chart of <a href="https://public.flourish.studio/visualisation/17299887/">iBuyers' listings</a>
+- Stacked area chart of <a href="https://public.flourish.studio/visualisation/17299595/">fastest-growing brokerages with >= 100 listings in 2023</a>
