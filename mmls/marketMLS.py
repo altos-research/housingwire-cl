@@ -8,7 +8,7 @@ common_brokerage_names = [
     'COLDWELL BANKER', 'CENTURY 21', 'REDFIN ', 
     'KELLER WILLIAMS', 'EXP ', 'HOMESMART', 
     'COMPASS', 'RE/MAX', 'BERKSHIRE HATHAWAY', 
-    'OPENDOOR'
+    'OPENDOOR', 'OFFERPAD', 'ZILLOW'
 ]
 
 class MarketMLS:
@@ -37,6 +37,10 @@ class MarketMLS:
         ### SPECIAL: clean SOTHEBY'S INTERNATIONAL REALTY
         self.df['listing_office_name'] = [x if 'SOTHEBY' not in x 
                                           else 'SOTHEBY\'S INTERNATIONAL REALTY'
+                                          for x in self.df.listing_office_name]
+        ### SPECIAL: clean SOTHEBY'S INTERNATIONAL REALTY
+        self.df['listing_office_name'] = [x if 'REMAX' not in x 
+                                          else 'RE/MAX' 
                                           for x in self.df.listing_office_name]
 
     def _subtablesAll(self):
