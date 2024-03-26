@@ -51,3 +51,10 @@ Data visualizations:
 <h2>Data storytelling</h2>
 
 Wrote <a href="https://public.flourish.studio/visualisation/17299595/">this DD</a>.
+
+<h2>Ideas for future improvement</h2>
+
+- Office IDs that are affiliated with multiple office names/office groups as a flag for acquisitions or reaffiliations; possible visualization of office migrations
+- Add builders to MMLS module
+- Add buyer side/sell side detail to initial dataset
+- Address PPSF inaccuracy in initial data pull by CL or just use sale price
