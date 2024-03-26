@@ -2,7 +2,7 @@ import pandas as pd
 pd.options.display.float_format = '{:,.2f}'.format
 
 # Referenced later by _subtablesMetro method
-# Do NOT region-specific names to list
+# Do NOT add region-specific names to list
 common_brokerage_names = [
     ### note the spaces after REDFIN and EXP
     'COLDWELL BANKER', 'CENTURY 21', 'REDFIN ', 
@@ -11,8 +11,16 @@ common_brokerage_names = [
     'OPENDOOR', 'OFFERPAD', 'ZILLOW'
 ]
 
-class MarketMLS:
+class MarketMLS: 
+    "A class for transforming CL's MLS market report CSV into cleaned summary tables and subtables."
+
     def __init__(self, csv_path, metro_name):
+        """Constructor method.
+
+        Args:
+            csv_path (str): File path to CSV of MLS data from CL.
+            metro_name (str): Name of geography as written in CL CSV.
+        """
         self.metro_name = metro_name
         self._raw = pd.read_csv(csv_path)
         self._years = self._raw.listing_year.unique()
@@ -23,6 +31,10 @@ class MarketMLS:
         print('Data grouped')
 
     def _cleanData(self):
+        """Function for cleaning listing office names.
+
+        Sets df attribute to copy of _raw attribute with cleaned listing office column.
+        """
         self.df = self._raw.copy()
         # handle missing office names
         # make office names all caps
@@ -45,6 +57,8 @@ class MarketMLS:
                                           for x in self.df.listing_office_name]
 
     def _subtablesAll(self):
+        """Function to create human-readable summary table and Flourish-ready gridOfLines table.
+        """
         # Group by geo and year
         # Reshape table
         grouped = self.df.groupby(['listing_year', 'geographic'])\
@@ -90,6 +104,14 @@ class MarketMLS:
         self.gridOfLines.columns.rename(None, inplace=True)      
     
     def companiesTable(self, regionalBrokers=[]):
+        """Function to identify largest brokers in metro and return table of just their statistics. Groups offices by company name.
+
+        Args:
+            regionalBrokers (list, optional): Brokerage names commmon to area that should be standardized. Defaults to [].
+
+        Returns:
+            Pandas DataFrame: DataFrame of brokerages that were in the top 100 by listing count in at least one year with statistics grouped by year and listing office name.
+        """
         # limit operations to metro's data
         metro = self.df.copy().loc[self.df.geographic==self.metro_name]
         # standardize company names into new column
@@ -145,6 +167,11 @@ class MarketMLS:
         return ByCo.loc[ByCo.index.isin(top_cos)]
     
     def officesTable(self):
+        """Function to create Flourish-ready table of offices binned by # of listings with bins of top 10, 11-100, 101-500 and 501+ to see changes in market shares of office by size over time.
+
+        Returns:
+            Pandas DataFrame: DataFrame of office bins, years and sum of listings per group.
+        """
         # limit operations to metro's data
         # drop non mls
         metro = self.df.copy().loc[(self.df.geographic==self.metro_name)&(self.df.listing_office_name!='NON MLS'), 
@@ -174,6 +201,11 @@ class MarketMLS:
         return metro[['listing_year', 'Top 10', '11-100', '101-500', '501+']]
     
     def officeBinPercs(self):
+        """Function to convert table of office bin listing counts to table of office bin share of total percentages.
+
+        Returns:
+            Pandas DataFrame: DataFrame of office bins, years and % of listings in each year.
+        """
         byOffices = self.officesTable()
         byOffices.set_index('listing_year', inplace=True)
         byOffices = byOffices.div(byOffices.sum(axis=1), axis=0) * 100
