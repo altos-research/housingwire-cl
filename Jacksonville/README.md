@@ -10,6 +10,8 @@ Data compiled by CL from <a href="https://discovery.corelogic.com/exchange/produ
 
 <h2>Data wrangling:</h2>
 
+<a href="https://github.com/hwmWill/CL/blob/main/Jacksonville/DataWrangling.ipynb">Code here</a>
+
 Discovered error in CL price per sq. ft. data. Values were extremely high and volatile (max of >$11M, Keller Williams at ~$4K in 2022 and $223 in 2023). Notified CL of error and was told they would work on it; did not receive any corrected data. Avg. PPSF not used in article.
 
 Standardized office names (all caps, no punctuation, no trailing spaces). Standardized name of common brokerages like RE/MAX, Redfin, Berkshire Hathaway, eXp, Compass, etc. 
@@ -22,7 +24,9 @@ After review, realized that EXIT Real Estate Gallery was acquired by United Real
 
 <h2>Exploratory data analysis and data visualization</h2>
 
-Created office listing group column of company affiliations of each office name. Created market share percentage column of each office listing group's percentage of listings each year.
+<a href="https://github.com/hwmWill/CL/blob/main/Jacksonville/MoreEDA.ipynb">Code here</a>
+
+Created office listing group column of company affiliations of each office name. Created market share percentage column of each office listing group's percentage of listings each year. Created five-year change percent column for top brokerages by listings.
 
 Created filtered and pivoted tables:
 - All stats by geography and listing year
@@ -47,3 +51,10 @@ Data visualizations:
 <h2>Data storytelling</h2>
 
 Wrote <a href="https://public.flourish.studio/visualisation/17299595/">this DD</a>.
+
+<h2>Ideas for future improvement</h2>
+
+- Office IDs that are affiliated with multiple office names/office groups as a flag for acquisitions or reaffiliations; possible visualization of office migrations
+- Add builders to MMLS module
+- Add buyer side/sell side detail to initial dataset
+- Address PPSF inaccuracy in initial data pull by CL or just use sale price
