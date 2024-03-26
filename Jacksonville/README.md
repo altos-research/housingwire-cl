@@ -26,7 +26,7 @@ After review, realized that EXIT Real Estate Gallery was acquired by United Real
 
 <a href="https://github.com/hwmWill/CL/blob/main/Jacksonville/MoreEDA.ipynb">Code here</a>
 
-Created office listing group column of company affiliations of each office name. Created market share percentage column of each office listing group's percentage of listings each year.
+Created office listing group column of company affiliations of each office name. Created market share percentage column of each office listing group's percentage of listings each year. Created five-year change percent column for top brokerages by listings.
 
 Created filtered and pivoted tables:
 - All stats by geography and listing year
