@@ -44,8 +44,8 @@ Data visualizations:
 - Grouped hbars by <a href="https://public.flourish.studio/visualisation/17269941/">office rank bins</a>
 - Grid of hbars of <a href="https://public.flourish.studio/visualisation/17268433/">2019 vs. 2023 for each geographic bin</a>
 - Bar chart race of <a href="https://public.flourish.studio/visualisation/17268383/">top 10 brokerages by listing count each year</a>
-- Stacked area chart of <a href="https://public.flourish.studio/visualisation/17300005/">homebuilders' listings</a>
-- Stacked area chart of <a href="https://public.flourish.studio/visualisation/17299887/">iBuyers' listings</a>
+- Stacked bar chart of <a href="https://public.flourish.studio/visualisation/17300005/">homebuilders' listings</a>
+- Stacked bar chart of <a href="https://public.flourish.studio/visualisation/17299887/">iBuyers' listings</a>
 - Stacked area chart of <a href="https://public.flourish.studio/visualisation/17299595/">fastest-growing brokerages with >= 100 listings in 2023</a>
 
 <h2>Data storytelling</h2>
