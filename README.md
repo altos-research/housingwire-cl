@@ -4,4 +4,4 @@
 - <a href="https://github.com/hwmWill/CL/tree/main/mmls">MMLS</a>: Object-oriented Python module for standard data cleaning steps for CSV received from CL. Step 1 for data wrangling and exploration.
 - <a href="https://github.com/hwmWill/CL/tree/main/SanDiego">San Diego</a>: Prior to MMLS. Explores dataset and creates tables for <a href="https://www.housingwire.com/articles/a-san-diego-data-dive-shows-a-market-upended-by-tight-supply/">this article</a>.
 - <a href="https://github.com/hwmWill/CL/tree/main/Jacksonville">Jacksonville</a>: Uses MMLS for data wrangling. Explores dataset and creates tables for <a href="">this article</a>.
-- <a href="https://github.com/hwmWill/CL/tree/main/Dallas">Dallas</a>Dallas: CoreLogic changed delivery method so that I could write my own queries in SQL on Discovery platform. Therefore, I did not need to use MMLS for data wrangling.
+- <a href="https://github.com/hwmWill/CL/tree/main/Dallas">Dallas</a>: CoreLogic changed delivery method so that I could write my own queries in SQL on Discovery platform. Therefore, I did not need to use MMLS for data wrangling.
